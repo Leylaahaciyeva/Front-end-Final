@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Hunter</title>
+    <link rel="stylesheet" href="style.css">
+   <!-- FontFamily -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">        
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        screens: {
+      'sm': '435px',
+      'md': '834px',
+      'lg': '1440px',
+    },
+        extend: { 
+            fontFamily:{
+                poppins:["Poppins","sans serif"],
+            },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="font-poppins">
+    <header>
+    <div class="container m-auto px-20">
+      <div class="flex justify-between py-5 border border-[#f1f1f1] px-8">
+        <div><a class="font-bold text-3xl " href="/homePage.html">BrandHunter</a></div>
+        <div>
+          <ul class="flex text-sm font-semibold justify-center gap-3"> 
+            <li><a href="/magaza/magazaPage.html">Yeni gələnlər</a></li>
+            <li><a href="/magaza/magazaPage.html">Mağaza</a></li>
+            <li><a href="/magaza/magazaPage.html">Endirilmlər</a></li>
+            <li><a href="/brendler/brendler.html">Brendlər</a></li>
+          </ul>
+        </div>
+        <div>
+          <h1 class="font-bold text-lg">AZ</h1>
+        </div>
+       </div>
+        <div class="flex justify-between  px-8 py-7 border border-[#f1f1f1] ">
+          <div> <h1 class="text-lg font-bold">Kataloq</h1> </div>
+          <div class="flex w-[600px]">
+            <input class="w-full rounded-full h-12 pl-5 ring-1 ring-neutral-200 placeholder:text-lg" type="text" placeholder="Axtarış ">
+            <img class=" relative right-9" src="assets/icons/search.svg" alt="">
+          </div>
+          <a class="relative font-bold flex gap-1 items-center" href="/basket/basket.html">
+            <img class="w-[30px] h-[30px]" src="assets/icons/shop.svg" alt="">
+            <span class="absolute left-4 top-0 w-6 h-6 flex items-center justify-center rounded-full bg-[#ffdcdc] text-xs">0</span>
+          </a>
+        </div>
+    </div>
+    </header>
+    <main class="w-[1280px] h-auto m-auto border-x border-[#f1f1f1] p-8">
+     <div class=" h-[600px] bg-cover rounded-[30px] relative bg-[url('./assets/images/image-1.png')]">
+       <div class=" ">
+        <img class="relative top-14 left-16" src="assets/icons/logo.svg" alt="">
+        <div class="absolute bottom-10 left-16">        
+          <h3 class="tel-lg font-semibold mb-6">All of your favorite brands in one place</h3>
+          <div class="flex gap-[15px]">
+            <button class=" inline-flex items-center gap-x-2 px-7 h-12 rounded-full ring-2 font-bold transition-colors bg-transparent text-black hover:bg-black hover:text-white ring-black hover:duration-300">2023 Look book</button>
+            <a href="/magaza/magazaPage.html">
+              <button class="button inline-flex items-center gap-x-2 px-7 h-12 rounded-full  font-bold transition-colors ring-2 ring-black bg-black text-white hover:bg-[#ffdcdc] hover:text-black hover:duration-300 ring-transparent">
+                Mağazaya keç
+                <img class="arrow-white hover:hidden" src="assets/icons/arrow-white.svg" alt="">
+               <img class="arrow-black hidden" src="assets/icons/arrow-right.svg" alt="">
+              </button>
+            </a>
+          </div>
+        </div>
+       </div>
+     </div>
+     <div class=" flex gap-6 justify-between mt-10 ">
+      <div class="w-[480px] h-[600px] relative">
+        <img class=" w-full h-full" src="assets/images/image 3.png" alt="">
+        <h1 class="absolute bottom-[15%] left-8 text-5xl text-white font-semibold">Fall Release</h1>
+        <p class="text-white text-xl absolute left-8 bottom-[5%] font-semibold">The latest and greatest from our Fall collection</p>
+      </div>
+      <div class="relative w-[350px] h-[370px]">
+        <img class=" w-full h-full" src="assets/images/image 3.png" alt="">
+        <h1 class="absolute bottom-[25%] left-8 text-5xl text-white font-semibold">Fall Release</h1>
+        <p class="text-white text-xl absolute left-8 bottom-[5%] font-semibold">The latest and greatest from our Fall collection</p>
+         <div class="bg-black py-6 px-8 h-[210px] rounded-2xl w-[350px] mt-[20px]  ">
+          <span class="text-white text-4xl font-bold leading-normal	"><span class=" underline decoration-solid">nazrinist</span> kodu ilə 10% endirim əldə edin
+          </span>
+         </div>
+      </div>
+      <div class=" relative w-[350px] h-[600px]">
+        <img class=" w-full h-full" src="assets/images/image 4.png" alt="">
+        <h1 class="absolute bottom-[15%] left-8 text-5xl text-white font-semibold">Summer Release</h1>
+        <p class="text-white text-xl absolute left-8 bottom-[3%] font-semibold">The latest and greatest from our Fall collection</p>
+      </div>
+     </div>
+     <div class="h-[600px] bg-[#ffdcdc] mt-10 rounded-3xl p-8 ">
+       <div class="flex justify-between text-3xl font-extrabold">
+        <h1 class="">ASAN.</h1>
+        <h1>GÜVƏNİLİR.</h1>
+        <h1>PREMİUM.</h1>
+       </div>
+       <div class="mt-24 mx-auto w-2/3 pb-16">
+          <h1 class="leading-snug text-center text-5xl font-bold">Brand Hunter ilə sevdiyiniz brendlərə daha yaxın olun</h1>
+       </div>
+       <div class="mx-auto rounded-full h-12 w-[510px] ring-2 ring-black relative">
+        <input type="text" placeholder="Email ünvanınızı daxil edin" class="h-full text-lg font-medium outline-none bg-transparent border-none w-full px-[20px] py-[5px]">
+        <button class="opacity-80 hover:opacity-100 transition-opacity w-10 h-10 rounded-full absolute right-1 top-1 bg-black p-3">
+          <img class="" src="assets/icons/arrow-white.svg" alt="">
+        </button>
+        <p class="text-center text-lg  font-medium w-[500px] mx-auto mt-[40px]">Abunə olaraq yeni məhsullardan və endirimlərdən xəbərdar ola bilərsiniz</p>
+       </div>
+     </div>
+    </main>
+    <footer class="w-[1280px] h-auto mx-auto border border-[#f1f1f1]">
+      <div class="flex  text-center  justify-between p-8">
+       <div>
+        <h5 class="font-bold text-lg">Sosial</h5>
+        <ul class="text-sm font-medium mt-[10px] font-light	 leading-6 ">
+          <li><a href="">Instagram</a></li>
+          <li><a href="">Facebook</a></li>
+          <li><a href="">Tiktok</a></li>
+        </ul>
+       </div>
+       <div>
+        <h5 class="font-bold text-lg">Əlaqə</h5>
+        <ul class="text-sm font-medium mt-[10px] font-light	 leading-6 ">
+          <li><a href="">Instagram</a></li>
+          <li><a href="">contact@brandhunter.az</a></li>
+        </ul>
+       </div>
+       <div>
+        <h5 class="font-bold text-lg">Navigasiya</h5>
+        <ul class="text-sm font-medium mt-[10px] font-light	 leading-6 ">
+          <li><a href="">Yeni gələnlər</a></li>
+          <li><a href="">Mağaza</a></li>
+          <li><a href="">Endirimlər</a></li>
+          <li><a href="">Brendlər</a></li>
+        </ul>
+       </div>
+       <div>
+        <h5 class="font-bold text-lg">Kömək</h5>
+        <ul class="text-sm font-medium mt-[10px] font-light	 leading-6 ">
+          <li><a href="">FAQ</a></li>
+          <li><a href="">Gizlilik siyasəti</a></li>
+          <li><a href="">Çatdırılma və Qaytarma</a></li>
+        </ul>
+       </div>
+      </div>
+      <div class="border-t border-[#f1f1f1] flex justify-between items-center py-2  text-xs font-medium px-8"> 
+        <p>© 2023 Brand Hunter. Bütün hüquqlar qorunur</p>
+        <p>Powered by <a class="rounded-full px-2 py-1 font-bold bg-[#ffdcdc] font-extrabold transition-colors">smylmrz</a></p>
+      </div>
+    </footer>
+</body>
+</html>

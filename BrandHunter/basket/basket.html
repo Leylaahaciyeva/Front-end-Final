@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- FontFamily -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">        
+   <!-- TailwindCSS -->
+   <script src="https://cdn.tailwindcss.com"></script>
+   <script>
+     tailwind.config = {
+       theme: {
+         screens: {
+       'sm': '435px',
+       'md': '834px',
+       'lg': '1440px',
+     },
+         extend: { 
+             fontFamily:{
+                 poppins:["Poppins","sans serif"],
+             },
+         },
+       },
+     };
+   </script>
+</head>
+<body class="font-poppins">
+<header>
+        <div class="container m-auto px-20">
+          <div class="flex justify-between py-5 border border-[#f1f1f1] px-8">
+            <div><a class="font-bold text-3xl " href="/homePage.html">BrandHunter</a></div>
+            <div>
+              <ul class="flex text-sm font-semibold justify-center gap-3"> 
+                <li><a href="/magaza/magazaPage.html">Yeni gələnlər</a></li>
+                <li><a href="/magaza/magazaPage.html">Mağaza</a></li>
+                <li><a href="/magaza/magazaPage.html">Endirilmlər</a></li>
+                <li><a href="/brendler/brendler.html">Brendlər</a></li>
+              </ul>
+            </div>
+            <div>
+              <h1 class="font-bold text-lg">AZ</h1>
+            </div>
+           </div>
+            <div class="flex justify-between  px-8 py-7 border border-[#f1f1f1] ">
+              <div> <h1 class="text-lg font-bold">Kataloq</h1> </div>
+              <div class="flex w-[600px]">
+                <input class="w-full rounded-full h-12 pl-5 ring-1 ring-neutral-200 placeholder:text-lg" type="text" placeholder="Axtarış ">
+                <img class=" relative right-9" src="/assets/icons/search.svg" alt="">
+              </div>
+              <a class="relative font-bold flex gap-1 items-center" href="/basket/basket.html">
+                <img class="w-[30px] h-[30px]" src="/assets/icons/shop.svg" alt="">
+                <span class="absolute left-4 top-0 w-6 h-6 flex items-center justify-center rounded-full bg-[#ffdcdc] text-xs">0</span>
+              </a>
+            </div>
+        </div>
+</header>
+<main class="w-[1280px] mx-auto border-x borde-[#f1f1f1]">
+    <div class="p-8">
+        <div>
+            <div>
+                <div  id="cartList" class="border-b pb-10 mb-10 grid grid-cols-12 gap-4 grid-flow-row">
+                    <!-- <div class="space-y-4 col-span-3">
+                        <div class="space-y-4">
+                            <div class="aspect-square max-h-fit rounded-xl overflow-hidden transition-all ring-2 ring-neutral-100 group-hover:ring-[#ffdcdc]">
+                                <img class="w-full h-full object-cover" src="/assets/images/canta.avif" alt="">
+                            </div>
+                            <div class="flex flex-col gap-2 ring-2 ring-neutral-100 p-4 rounded-xl hover:ring-[#ffdcdc] transition-all">
+                                <div class="flex justify-between items-center">
+                                    <div class="text-xs font-medium text-neutral-500">
+                                        Versace Jeans Couture
+                                    </div>
+                                </div>
+                                <a href="">Versace Jeans Couture çanta</a>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex gap-4 font-black border-r pr-4 pb-1 text-base">
+                                <button class="disabled:opacity-50 flex items-center justify-center rounded-full bg-neutral-100 border transition-colors hover:bg-[#ffdcdc] w-8 h-8">-</button>
+                                <input type="text" class="text-center ring-1 ring-neutral-800  pl-3 w-10 h-8 rounded-md">
+                                <button class="disabled:opacity-50 flex items-center justify-center rounded-full bg-neutral-100 border transition-colors hover:bg-[#ffdcdc] w-8 h-8">+</button>
+                            </div>
+                            <button class="inline-flex items-center gap-x-2 px-7 h-12 rounded-full ring-2 font-bold transition-colors disabled:opacity-50 disabled:cursor-not-allowed bg-black text-white hover:bg-cosmos hover:text-black ring-black hover:ring-[#ffdcdc] justify-center text-sm h-8 w-8 ">
+                                <i class="fa-solid fa-trash-can" style="color: #fff;"></i>
+                            </button>
+                        </div>
+                    </div> -->
+                </div> 
+            </div>
+            <div class="flex justify-center gap-3 order">
+                <a href="/order/orderPage.html" class="inline-flex items-center gap-x-2 px-7 h-12 rounded-full ring-2 font-bold transition-colors bg-black text-white hover:bg-[#ffdcdc] hover:text-black ring-black hover:ring-[#ffdcdc] h-9 text-sm justify-center">
+                    <span>Sifariş et</span>
+                    <i class="fa-regular fa-credit-card" style="color: #ffffff;"></i>
+                </a>
+                <button id="deleteBtn" class="inline-flex items-center gap-x-2 px-7 h-12 rounded-full ring-2 font-bold transition-colors disabled:opacity-50 disabled:cursor-not-allowed bg-transparent text-black hover:bg-black hover:text-white ring-black h-9 text-sm justify-center">
+                    Səbəti təmizlə
+                </button>
+            </div>
+        </div>
+        <div class="emptyBasket hidden">
+            <div class="flex flex-col space-y-2 items-center justify-center w-full py-5 font-bold">
+                <img class="w-[60px] h-[60px]" src="/assets/icons/ghost.png" alt="">
+                <span>
+                    <div class="flex flex-col items-center space-y-4">
+                        <p class="text-center">Səbətdə məhsul yoxdur</p>
+                        <a class="inline-flex items-center gap-x-2 px-7 h-12 rounded-full ring-2 font-bold transition-colors bg-black text-white hover:bg-[#ffdcdc] hover:text-black ring-black hover:ring-[#ffdcdc]" href="/magaza/magazaPage.html">
+                            <span>Mağazaya keç</span>
+                            <img src="/assets/icons/arrow-white.svg" alt="">
+                        </a>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="w-[1280px] h-auto mx-auto border border-[#f1f1f1]">
+  <div class="flex  text-center  justify-between p-8">
+   <div>
+    <h5 class="font-bold text-lg">Sosial</h5>
+    <ul class="text-sm font-medium mt-[10px] font-light	 leading-6 ">
+      <li><a href="">Instagram</a></li>
+      <li><a href="">Facebook</a></li>
+      <li><a href="">Tiktok</a></li>
+    </ul>
+   </div>
+   <div>
+    <h5 class="font-bold text-lg">Əlaqə</h5>
+    <ul class="text-sm font-medium mt-[10px] font-light	 leading-6 ">
+      <li><a href="">Instagram</a></li>
+      <li><a href="">contact@brandhunter.az</a></li>
+    </ul>
+   </div>
+   <div>
+    <h5 class="font-bold text-lg">Navigasiya</h5>
+    <ul class="text-sm font-medium mt-[10px] font-light	 leading-6 ">
+      <li><a href="">Yeni gələnlər</a></li>
+      <li><a href="">Mağaza</a></li>
+      <li><a href="">Endirimlər</a></li>
+      <li><a href="">Brendlər</a></li>
+    </ul>
+   </div>
+   <div>
+    <h5 class="font-bold text-lg">Kömək</h5>
+    <ul class="text-sm font-medium mt-[10px] font-light	 leading-6 ">
+      <li><a href="">FAQ</a></li>
+      <li><a href="">Gizlilik siyasəti</a></li>
+      <li><a href="">Çatdırılma və Qaytarma</a></li>
+    </ul>
+   </div>
+  </div>
+  <div class="border-t border-[#f1f1f1] flex justify-between items-center py-2  text-xs font-medium px-8"> 
+    <p>© 2023 Brand Hunter. Bütün hüquqlar qorunur</p>
+    <p>Powered by <a class="rounded-full px-2 py-1 font-bold bg-[#ffdcdc] font-extrabold transition-colors">smylmrz</a></p>
+  </div>
+</footer>
+</body>
+<script src="script.js"></script>
+</html>
