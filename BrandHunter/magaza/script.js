@@ -72,8 +72,7 @@ categoryItems.forEach((item)=>{
 });
 
 
-
-brendItems.forEach((item,index)=>{
+brendItems.forEach((item,index,array)=>{
   item.addEventListener("click",()=>{
  
     checkIcons[index].classList.toggle("hidden")
@@ -198,9 +197,16 @@ const displayProducts=()=>{
 };
 displayProducts();
 
-// clearBtn.addEventListener("click",()=>{
+clearBtn.addEventListener("click",()=>{
 
-// })
+  filteredCategories.length = 0 
+   filteredBrends.length=0 
+    filteredColors.length = 0 
+     filteredSizes.length = 0
+
+  displayProducts();
+
+})
 
 
 const searchBox=document.querySelector(".search")

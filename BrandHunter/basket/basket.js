@@ -13,16 +13,6 @@ const orderBtn=document.getElementById("orderBtn")
 
 const fetchedCardItems=JSON.parse(localStorage.getItem("cartItems"));
 
-const basketcounts=()=>{
-    const fetchedCardItems=JSON.parse(localStorage.getItem("cartItems"));
-    console.log(fetchedCardItems);
-    
-    const countBasket=document.getElementById("count")
-    
-        countBasket.textContent=fetchedCardItems.length;
-    
- }
-basketcounts()
 
 cartList.innerHTML=""
 
@@ -106,14 +96,6 @@ fetchedCardItems.forEach((item,index,array) => {
 
   })
 
-    deleteItemBtn.addEventListener("click",()=>{
-
-    })
-
-    basketcounts()
-
-
-
 
 });
 
@@ -164,3 +146,13 @@ searchInput.addEventListener("input", () => {
 });
 
 
+const basketcounts=()=>{
+    const fetchedCardItems=JSON.parse(localStorage.getItem("cartItems"));
+    console.log(fetchedCardItems);
+    
+    const countBasket=document.getElementById("count")
+    
+        countBasket.textContent=fetchedCardItems.length;
+    
+ }
+basketcounts()
