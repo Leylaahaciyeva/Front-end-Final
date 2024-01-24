@@ -47,13 +47,25 @@
            </div>
             <div class="flex justify-between  px-8 py-7 border border-[#f1f1f1] ">
               <div> <h1 class="text-lg font-bold">Kataloq</h1> </div>
-              <div class="flex w-[600px]">
-                <input class="w-full rounded-full h-12 pl-5 ring-1 ring-neutral-200 placeholder:text-lg" type="text" placeholder="Axtarış ">
-                <img class=" relative right-9" src="/assets/icons/search.svg" alt="">
-              </div>
+              <div class="w-[600px]">
+                <div class="flex">
+                    <input id="searchInput" class="w-full rounded-full h-12 pl-5 ring-1 ring-neutral-200 placeholder:text-lg" type="text" placeholder="Axtarış ">
+                    <img class=" relative right-9" src="/assets/icons/search.svg" alt="">
+                </div>
+                <ul class="space-y-1 absolute w-[580px]   search">
+                    <!-- <li class="ring-1 ring-neutral-200 sbox:rounded-t-none  bg-white hover:bg-neutral-100 p-1 rounded-xl">
+                        <a class="flex gap-2 " href="">
+                            <span class="flex flex-col gap-1 w-full">
+                                <span class="font-bold">Emporio Armani shopper bag</span>
+                                <span class="text-sm font-medium">Emporio Armani</span>
+                            </span>
+                        </a>
+                    </li> -->
+                </ul>
+            </div>
               <a class="relative font-bold flex gap-1 items-center" href="/basket/basket.html">
                 <img class="w-[30px] h-[30px]" src="/assets/icons/shop.svg" alt="">
-                <span class="absolute left-4 top-0 w-6 h-6 flex items-center justify-center rounded-full bg-[#ffdcdc] text-xs">0</span>
+                <span id="count" class="absolute left-4 top-0 w-6 h-6 flex items-center justify-center rounded-full bg-[#ffdcdc] text-xs">0</span>
               </a>
             </div>
         </div>
@@ -91,7 +103,7 @@
                 </div> 
             </div>
             <div class="flex justify-center gap-3 order">
-                <a href="/order/orderPage.html" class="inline-flex items-center gap-x-2 px-7 h-12 rounded-full ring-2 font-bold transition-colors bg-black text-white hover:bg-[#ffdcdc] hover:text-black ring-black hover:ring-[#ffdcdc] h-9 text-sm justify-center">
+                <a id="orderBtn" href="/order/orderPage.html" class="inline-flex items-center gap-x-2 px-7 h-12 rounded-full ring-2 font-bold transition-colors bg-black text-white hover:bg-[#ffdcdc] hover:text-black ring-black hover:ring-[#ffdcdc] h-9 text-sm justify-center">
                     <span>Sifariş et</span>
                     <i class="fa-regular fa-credit-card" style="color: #ffffff;"></i>
                 </a>
@@ -157,5 +169,6 @@
   </div>
 </footer>
 </body>
-<script src="script.js"></script>
+<script type="module" src="basket.js"></script>
+<script src="/order/order.js"></script>
 </html>

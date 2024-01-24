@@ -43,15 +43,6 @@ sizes.forEach((size)=>{
 });
 
 
-brends.forEach((brend)=>{
-    brendList.innerHTML+=` <li class="w-full" data-brend="${brend}">
-    <button class="flex items-center justify-between transition-colors w-full pr-3 py-2 hover:bg-neutral-100 text-sm font-medium pl-3">
-        <span>${brend}</span>
-        <img class="w-[8px] hidden checkIcon" src="/assets/icons/check.svg" alt="">
-    </button>
-</li>`
-})
-
 
 //  products.forEach((product)=>{
 
@@ -86,3 +77,4 @@ brends.forEach((brend)=>{
     
 //     });
     
+

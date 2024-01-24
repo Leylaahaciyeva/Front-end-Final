@@ -26,6 +26,7 @@ const filteredColors=[];
 const filteredSizes=[];
 
 
+
 filterBtns.forEach((btn,index)=>{
     btn.addEventListener("click",()=>{
       filters[index].classList.toggle("hidden");
@@ -48,31 +49,29 @@ categoryBtns.forEach((btn,index)=>{
   })
 })
 
-
 categoryItems.forEach((item)=>{
   item.addEventListener("click",()=>{
+      item.classList.toggle("font-black")
 
-    products.forEach((product)=>{
-      let categorytype=product.categorytype;
+      const {category}=item.dataset;
 
-      if(filteredCategories.includes(categorytype)){
-        const indexOfCategory = filteredCategories.indexOf(categorytype);
+      if(filteredCategories.includes(category)){
+          const indexOfCategory=filteredCategories.indexOf(category);
+          filteredCategories.splice(indexOfCategory,1);
+      }
+      else{
+          filteredCategories.push(category)
+      }
 
-        filteredCategories.splice(indexOfCategory,1);
-    }
-    else{
-        filteredCategories.push(categorytype)
-    }
-
-    console.log(filteredCategories);
-
-
-    })
+      console.log(filteredCategories);
 
       displayProducts()
   })
 
+
 });
+
+
 
 brendItems.forEach((item,index)=>{
   item.addEventListener("click",()=>{
@@ -80,6 +79,7 @@ brendItems.forEach((item,index)=>{
     checkIcons[index].classList.toggle("hidden")
 
       const { brend }=item.dataset;
+
 
       if(filteredBrends.includes(brend)){
           const indexOfBrend= filteredBrends.indexOf(brend);
@@ -146,7 +146,7 @@ const displayProducts=()=>{
       if(filteredCategories.length === 0 && filteredBrends.length===0 && filteredColors.length === 0 && filteredSizes.length === 0)
       return true;
 
-      const categoryCondition=filteredCategories.length ===0 || filteredCategories.includes(product.category);
+      const categoryCondition=filteredCategories.length ===0 || filteredCategories.includes(product.categorytype);
       const colorCondition=filteredColors.length===0 || filteredColors.includes(product.color);
       const sizeCondition=filteredSizes.length === 0 || product.sizes.some((size)=>filteredSizes.includes(size))
       const brendCondition=filteredBrends.length===0 || filteredBrends.includes(product.brend)
@@ -201,3 +201,53 @@ displayProducts();
 // clearBtn.addEventListener("click",()=>{
 
 // })
+
+
+const searchBox=document.querySelector(".search")
+const searchInput=document.getElementById("searchInput")
+
+
+const availableKeywords = products.map((product) => [product.name]).flat();
+
+let results = [];
+
+
+searchInput.addEventListener("input", () => {
+    setTimeout(() => {
+     const givenValue = searchInput.value.trim().toLowerCase();
+     if (!givenValue) {
+        searchBox.classList.add("hidden");
+       return;
+     }
+     results = [...new Set(
+         availableKeywords.filter((keyword) =>
+           keyword.toLocaleLowerCase().includes(givenValue)
+         ))
+     ];
+    if (results.length > 6) {
+       results.splice(0, 6);
+    }
+    searchBox.innerHTML = "";
+    results.forEach((result) => {
+    
+      const liElement = document.createElement("li");
+      liElement.textContent = result;
+      liElement.className = "ring-1 ring-neutral-200 p-8 cursor-pointer  bg-white hover:bg-neutral-100 rounded-xl";
+      searchBox.classList.remove("hidden");
+      searchBox.append(liElement);
+    });
+     }, 30);
+
+});
+
+
+const basketcounts=()=>{
+  const fetchedCardItems=JSON.parse(localStorage.getItem("cartItems"));
+  
+  const countBasket=document.getElementById("count")
+  
+      countBasket.textContent=fetchedCardItems.length;
+  
+}
+basketcounts()
+
